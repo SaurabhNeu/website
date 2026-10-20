@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Saurabh Shukla · Neutrino physics and gaseous detectors</title>
+<meta name="description" content="Assistant Professor of Physics at B.R.D. P.G. College, Deoria. NOvA Collaboration member working on Lorentz invariance violation and Spherical Proportional Counters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f8;--panel:#fff;--ink:#14263b;--mute:#52627a;--line:#d5dde8;--accent:#16798c;--gold:#b87a12;--side:#14263b;--sideink:#e8eef5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1824;--panel:#15243a;--ink:#e6edf5;--mute:#9db0c6;--line:#27405e;--accent:#4cc3d9;--gold:#e8b04a;--side:#0a1220;--sideink:#e6edf5}}
+:root[data-theme="dark"]{--bg:#0e1824;--panel:#15243a;--ink:#e6edf5;--mute:#9db0c6;--line:#27405e;--accent:#4cc3d9;--gold:#e8b04a;--side:#0a1220;--sideink:#e6edf5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+aside{background:var(--side);color:var(--sideink);padding:2.2rem 1.6rem;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:1.4rem}
+aside h1{font:600 1.7rem/1.15 Spectral,serif;margin:0}
+aside p{margin:.3rem 0 0;font-size:.9rem;opacity:.8}
+nav{display:flex;flex-direction:column;gap:.15rem}
+nav a{color:var(--sideink);text-decoration:none;padding:.35rem .7rem;border-left:2px solid transparent;font-size:.95rem;opacity:.8}
+nav a:hover,nav a.on{border-left-color:var(--gold);opacity:1}
+.side-foot{margin-top:auto;font-size:.85rem;display:flex;flex-direction:column;gap:.4rem}
+.side-foot a{color:var(--sideink)}
+#theme{background:none;border:1px solid var(--sideink);color:var(--sideink);border-radius:6px;padding:.3rem .7rem;font:inherit;font-size:.82rem;cursor:pointer;opacity:.8;width:max-content}
+main{padding:0 clamp(1.2rem,5vw,4.5rem) 4rem;max-width:62rem}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:2rem;align-items:center;padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+.hero h2{font:400 clamp(1.9rem,3.6vw,2.9rem)/1.15 Spectral,serif;margin:0 0 1rem}
+.hero p{color:var(--mute);margin:0 0 1.2rem;max-width:34rem}
+.btns{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.55rem 1.1rem;border-radius:6px;text-decoration:none;font-weight:500;border:1px solid var(--accent)}
+.btn.p{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{color:#0a1220}}
+:root[data-theme="dark"] .btn.p{color:#0a1220}
+.spc{width:100%;height:auto;color:var(--accent)}
+.spc .shell{fill:var(--panel);stroke:var(--ink);stroke-width:3}
+.spc .track{stroke:var(--accent);stroke-width:1.4;fill:none;stroke-dasharray:4 5;animation:drift 5s linear infinite}
+.spc .anode{fill:var(--gold)}
+.spc text{fill:var(--mute);font:500 11px "IBM Plex Sans",sans-serif}
+@keyframes drift{to{stroke-dashoffset:-90}}
+@media (prefers-reduced-motion:reduce){.spc .track{animation:none}}
+section{padding:2.6rem 0 .5rem}
+h3{font:600 1.55rem/1.2 Spectral,serif;margin:0 0 1.1rem}
+h4{font:600 1rem/1.3 "IBM Plex Sans",sans-serif;margin:0 0 .3rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.card p,.card li{color:var(--mute);font-size:.94rem;margin:.2rem 0}
+.card ul{padding-left:1.1rem;margin:.3rem 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.tags span{font-size:.82rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:99px;color:var(--mute)}
+.tl{border-left:2px solid var(--line);margin:0;padding:0 0 0 1.3rem;list-style:none}
+.tl li{position:relative;padding-bottom:1.15rem}
+.tl li::before{content:"";position:absolute;left:-1.72rem;top:.5rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent)}
+.tl .yr{color:var(--gold);font-weight:600;font-size:.88rem}
+.tl p{margin:.1rem 0;color:var(--mute);font-size:.94rem}
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{padding:.8rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:3.4rem 1fr;gap:.8rem}
+.pubs .y{color:var(--gold);font-weight:600}
+.pubs b{font-weight:500}
+.pubs small{display:block;color:var(--mute)}
+.note{color:var(--mute);font-size:.9rem;margin-top:.9rem}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.2rem;color:var(--mute);font-size:.85rem}
+@media (max-width:900px){
+.wrap{grid-template-columns:1fr}
+aside{position:static;height:auto;padding:1.3rem 1.2rem;gap:.9rem}
+nav{flex-direction:row;flex-wrap:wrap;gap:.2rem .5rem}
+nav a{border-left:0;border-bottom:2px solid transparent;padding:.2rem .3rem}
+.side-foot{margin-top:0}
+.hero{grid-template-columns:1fr;padding-top:2rem}
+.pubs li{grid-template-columns:3rem 1fr}}
+.photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin-bottom:1rem}
+.eq{margin-top:1rem;overflow-x:auto}
+.eq p{margin:0 0 .4rem}
+.pubs .lk{display:inline-block;margin-top:.2rem;font-size:.86rem}
+@media (max-width:900px){.photo{width:84px;height:84px;margin-bottom:.6rem}}
+</style>
+<script>window.MathJax={tex:{displayMath:[['$$','$$']]}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div>
+    <img class="photo" src="Saurabh-Shukla-36.jpg" alt="Portrait of Dr. Saurabh Shukla" width="112" height="112">
+    <h1>Dr. Saurabh Shukla</h1>
+    <p>Assistant Professor of Physics<br>B.R.D. P.G. College, Deoria</p>
+  </div>
+  <nav aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#skills">Skills</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience and education</a>
+    <a href="#talks">Talks and training</a>
+    <a href="#honors">Honors</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="side-foot">
+    <a href="mailto:saurabhbrdphy@gmail.com">saurabhbrdphy@gmail.com</a>
+    <a href="#" id="rg">ResearchGate profile</a>
+    <button id="theme" type="button">Switch theme</button>
+  </div>
+</aside>
+
+<main>
+  <div class="hero">
+    <div>
+      <h2>Neutrinos in the beam, gas in the detector.</h2>
+      <p>I am an experimental and phenomenological particle physicist. My PhD tested Lorentz invariance violation in long-baseline neutrino oscillations. Now I build and simulate Spherical Proportional Counters, and I am a member of the NOvA Collaboration.</p>
+      <div class="btns">
+        <a class="btn p" href="#publications">Read my papers</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <svg class="spc" viewBox="0 0 300 300" role="img" aria-label="Cross-section of a spherical proportional counter: a gas-filled sphere with a central anode and electrons drifting inward">
+      <circle class="shell" cx="150" cy="150" r="128"/>
+      <g class="track">
+        <path d="M150 22 C152 60 148 100 150 128"/>
+        <path d="M240 60 C210 90 175 115 158 140"/>
+        <path d="M278 150 C240 152 200 148 172 150"/>
+        <path d="M240 240 C210 210 178 186 160 162"/>
+        <path d="M150 278 C148 240 152 200 150 172"/>
+        <path d="M60 240 C90 210 122 186 140 162"/>
+        <path d="M22 150 C60 148 100 152 128 150"/>
+        <path d="M60 60 C90 90 125 115 142 140"/>
+      </g>
+      <line x1="150" y1="150" x2="150" y2="292" stroke="var(--ink)" stroke-width="2"/>
+      <circle class="anode" cx="150" cy="150" r="14"/>
+      <text x="168" y="146">anode ball</text>
+      <text x="165" y="40">drift gas</text>
+      <text x="164" y="288">HV rod and readout</text>
+    </svg>
+  </div>
+
+  <section id="research">
+    <h3>Research</h3>
+    <div class="cols">
+      <div class="card">
+        <h4>Gaseous detectors and instrumentation</h4>
+        <p>Simulation-driven design, readout development and experimental characterisation of Spherical Proportional Counters. I wrote their Garfield++ simulation from scratch, including a voxelization-based fast simulation.</p>
+      </div>
+      <div class="card">
+        <h4>Neutrino physics and BSM phenomenology</h4>
+        <p>Oscillations, Lorentz invariance violation and other new-physics effects in long-baseline experiments, linking phenomenological predictions to experimental data.</p>
+      </div>
+      <div class="card">
+        <h4>Experimental particle physics</h4>
+        <p>Detector R&amp;D for large experiments, combining detector development, electronics and data analysis. I also mentor master’s students in detector simulation and development.</p>
+      </div>
+    </div>
+    <div class="card eq" style="margin-top:1rem">
+      <p>The two-flavour oscillation probability, the starting point for what long-baseline experiments like NOvA and DUNE measure:</p>
+      $$P_{\alpha \to \beta} = \sin^2(2\theta)\,\sin^2\!\left(\frac{\Delta m^2 L}{4E}\right)$$
+      <p>Lorentz invariance violation adds direction-dependent terms to this picture, which is what the sidereal-effect searches look for.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h3>Technical skills</h3>
+    <div class="cols">
+      <div class="card"><h4>Detector development</h4><div class="tags"><span>SPCs</span><span>RPCs</span><span>Scintillators</span><span>HPGe</span><span>PMTs</span><span>SiPMs</span></div></div>
+      <div class="card"><h4>Simulation</h4><div class="tags"><span>Garfield++</span><span>GEANT4</span><span>COMSOL</span><span>Detector response</span></div></div>
+      <div class="card"><h4>Readout and DAQ</h4><div class="tags"><span>CAEN</span><span>PXIe</span><span>NIM</span><span>LabVIEW</span><span>Arduino</span></div></div>
+      <div class="card"><h4>Electronics</h4><div class="tags"><span>Front-end electronics</span><span>Preamplifiers</span><span>PMT bias circuits</span><span>KiCad PCBs</span></div></div>
+      <div class="card"><h4>Analysis</h4><div class="tags"><span>C++</span><span>Python</span><span>ROOT</span><span>Mathematica</span><span>GLoBES</span></div></div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h3>Selected publications</h3>
+    <ul class="pubs">
+      <li><span class="y">2026</span><div><b>Precision measurement of neutrino oscillation parameters with 10 years of data from the NOvA experiment</b><small>NOvA Collaboration · Physical Review Letters 136, 011802</small><a class="lk" href="https://arxiv.org/abs/2509.04361">arXiv:2509.04361</a></div></li>
+      <li><span class="y">2025</span><div><b>Joint neutrino oscillation analysis from the T2K and NOvA experiments</b><small>NOvA Collaboration · Nature 646, 818–824</small><a class="lk" href="https://www.nature.com/articles/s41586-025-09599-3">Nature article</a></div></li>
+      <li><span class="y">2025</span><div><b>Measurement of d²σ/d|q| dE<sub>avail</sub> in charged-current ν<sub>μ</sub>-nucleus interactions at ⟨E<sub>ν</sub>⟩ = 1.86 GeV using the NOvA near detector</b><small>NOvA Collaboration · Physical Review D 111, 052009</small><a class="lk" href="https://doi.org/10.1103/PhysRevD.111.052009">DOI</a></div></li>
+      <li><span class="y">2025</span><div><b>Dual-baseline search for active-to-sterile neutrino oscillations in NOvA</b><small>NOvA Collaboration · Physical Review Letters 134, 081804</small><a class="lk" href="https://doi.org/10.1103/PhysRevLett.134.081804">DOI</a></div></li>
+      <li><span class="y">2025</span><div><b>Search for accelerator-produced sub-GeV dark matter with the NOvA near detector</b><small>NOvA Collaboration · preprint</small><a class="lk" href="https://arxiv.org/abs/2507.10754">arXiv:2507.10754</a></div></li>
+      <li><span class="y">2024</span><div><b>Investigating Lorentz invariance violation effects on CP violation and mass hierarchy sensitivity at DUNE</b><small>S. Shukla, S. Mishra, L. Singh, V. Singh · Physical Review D 110, 095033</small><a class="lk" href="https://doi.org/10.1103/PhysRevD.110.095033">DOI</a></div></li>
+      <li><span class="y">2024</span><div><b>Search for Lorentz violation through sidereal effect at the NOvA experiment</b><small>S. Mishra, S. Shukla, L. Singh, V. Singh · Physical Review D 109, 075042</small><a class="lk" href="https://doi.org/10.1103/PhysRevD.109.075042">DOI</a></div></li>
+      <li><span class="y">2024</span><div><b>Search for CP-violating neutrino non-standard interactions with the NOvA experiment</b><small>NOvA Collaboration · Physical Review Letters 133, 201802</small><a class="lk" href="https://doi.org/10.1103/PhysRevLett.133.201802">DOI</a></div></li>
+      <li><span class="y">2024</span><div><b>Exploring non-isotropic Lorentz invariance violation through sidereal effect at DUNE</b><small>S. Mishra, S. Shukla, L. Singh, V. Singh · preprint</small><a class="lk" href="https://arxiv.org/abs/2410.09248">arXiv:2410.09248</a></div></li>
+      <li><span class="y">2024</span><div><b>Octant ambiguity in the presence of non-isotropic Lorentz invariance violation</b><small>S. Mishra, S. Shukla, L. Singh, V. Singh · preprint</small><a class="lk" href="https://arxiv.org/abs/2409.20439">arXiv:2409.20439</a></div></li>
+    </ul>
+    <p class="note">Selected from 16 papers, 12 of them with the NOvA Collaboration. The complete list is on ResearchGate.</p>
+  </section>
+
+  <section id="experience">
+    <h3>Experience and education</h3>
+    <ol class="tl">
+      <li><span class="yr">Aug 2022 – present</span><h4>Assistant Professor, B.R.D. P.G. College, Deoria</h4><p>Teaching mathematical physics, mechanics, electromagnetic theory, optics, modern physics, electronics and nuclear physics, plus optics and electronics labs. Guiding master’s projects on SPC simulation and development at CUSB.</p></li>
+      <li><span class="yr">2019 – 2025</span><h4>PhD, Central University of South Bihar (research period at BHU, 2019–2022)</h4><p>Thesis: Implications of Lorentz invariance violation for neutrino oscillation studies in long-baseline experiments. Member of the India–Fermilab NOvA collaboration, with data monitoring and analysis experience.</p></li>
+      <li><span class="yr">2018</span><h4>MSc Physics, University of Allahabad</h4><p>Specialisation in nuclear and particle physics. Gold Medal.</p></li>
+      <li><span class="yr">2016</span><h4>BSc, University of Allahabad</h4><p>Physics, mathematics and statistics.</p></li>
+    </ol>
+  </section>
+
+  <section id="talks">
+    <h3>Talks and training</h3>
+    <div class="cols">
+      <div class="card"><h4>Presentations</h4><ul>
+        <li>Poster, XXVI DAE-BRNS HEP Symposium, BHU Varanasi, 2024</li>
+        <li>Oral, XXV DAE-BRNS HEP Symposium, Mohali, 2022: non-isotropic LIV for NOvA in the disappearance channel</li>
+        <li>Oral, DAE Symposium on Nuclear Physics, vol. 66, 2022</li></ul></div>
+      <div class="card"><h4>Schools and workshops</h4><ul>
+        <li>8th Vietnam School on Neutrinos, ICISE, Quy Nhon, July 2024</li>
+        <li>Detector front-end electronics training, Cosmic Ray Laboratory, Ooty, June–July 2024</li>
+        <li>Understanding the Universe Through Neutrinos, ICTS Bangalore, 2024</li></ul></div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <h3>Honors and awards</h3>
+    <ol class="tl">
+      <li><span class="yr">2021 – 2022</span><h4>Senior Research Fellow, CSIR</h4></li>
+      <li><span class="yr">2019 – 2021</span><h4>Junior Research Fellow, CSIR and DST</h4></li>
+      <li><span class="yr">2018</span><h4>Gold Medal, MSc Physics, University of Allahabad</h4></li>
+      <li><span class="yr">2013 – 2018</span><h4>INSPIRE Scholar (SHE), Department of Science and Technology</h4></li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <div class="card">
+      <p>Department of Physics, B.R.D. P.G. College, Deoria, Uttar Pradesh, India</p>
+      <p><a href="mailto:saurabhbrdphy@gmail.com">saurabhbrdphy@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> Saurabh Shukla</footer>
+</main>
+</div>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var root=document.documentElement,btn=document.getElementById('theme');
+btn.addEventListener('click',function(){
+  var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+});
+var links=[].slice.call(document.querySelectorAll('nav a'));
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})}
+})},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section').forEach(function(s){obs.observe(s)});
+</script>
+</body>
+</html>

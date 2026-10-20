@@ -1,14 +1,2 @@
 title: "Dr. Saurabh Shukla"
-description: "Assistant Professor | Physics"
-theme: minima
-
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
-
-header_pages:
-  - about.md
-  - research.md
-  - publications.md
-  - teaching.md
-  - contact.md
+description: "Assistant Professor of Physics | Neutrino physics and gaseous detectors"
