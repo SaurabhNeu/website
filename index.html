@@ -36,13 +36,27 @@ main{padding:0 clamp(1.2rem,5vw,4.5rem) 4rem;max-width:62rem}
 .btn.p{background:var(--accent);color:#fff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{color:#0a1220}}
 :root[data-theme="dark"] .btn.p{color:#0a1220}
-.spc{width:100%;height:auto;color:var(--accent)}
-.spc .shell{fill:var(--panel);stroke:var(--ink);stroke-width:3}
-.spc .track{stroke:var(--accent);stroke-width:1.4;fill:none;stroke-dasharray:4 5;animation:drift 5s linear infinite}
-.spc .anode{fill:var(--gold)}
-.spc text{fill:var(--mute);font:500 11px "IBM Plex Sans",sans-serif}
-@keyframes drift{to{stroke-dashoffset:-90}}
-@media (prefers-reduced-motion:reduce){.spc .track{animation:none}}
+.osc{width:100%;height:auto;color:var(--ink)}
+.osc text{fill:var(--mute);font:500 10.5px "IBM Plex Sans",sans-serif}
+.osc .gr{stroke:var(--line);stroke-width:1}
+.osc .ax{stroke:var(--mute);stroke-width:1}
+.osc .c1{fill:none;stroke:var(--accent);stroke-width:2.4}
+.osc .c2{fill:none;stroke:var(--gold);stroke-width:2.4}
+.osc .nv{stroke:var(--mute);stroke-width:1.2;stroke-dasharray:4 4}
+.osc .dot{fill:var(--accent);stroke:var(--bg);stroke-width:2}
+.osc .l1{fill:var(--accent);font-weight:600}
+.osc .l2{fill:var(--gold);font-weight:600}
+.fig{margin:1rem 0 0}
+.fig figcaption{color:var(--mute);font-size:.9rem;margin-top:.5rem}
+.bl{width:100%;height:auto}
+.bl text{fill:var(--mute);font:500 11.5px "IBM Plex Sans",sans-serif}
+.bl .rock{fill:var(--line);opacity:.45}
+.bl .surf{fill:none;stroke:var(--ink);stroke-width:2.5}
+.bl .beam{stroke:var(--accent);stroke-width:2.5;stroke-dasharray:7 6;animation:flow 3s linear infinite}
+.bl .b2{stroke:var(--gold)}
+.bl .pt{fill:var(--panel);stroke:var(--ink);stroke-width:2.5}
+@keyframes flow{to{stroke-dashoffset:-26}}
+@media (prefers-reduced-motion:reduce){.bl .beam{animation:none}.osc .dot{display:none}}
 section{padding:2.6rem 0 .5rem}
 h3{font:600 1.55rem/1.2 Spectral,serif;margin:0 0 1.1rem}
 h4{font:600 1rem/1.3 "IBM Plex Sans",sans-serif;margin:0 0 .3rem}
@@ -115,23 +129,19 @@ nav a{border-left:0;border-bottom:2px solid transparent;padding:.2rem .3rem}
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
-    <svg class="spc" viewBox="0 0 300 300" role="img" aria-label="Cross-section of a spherical proportional counter: a gas-filled sphere with a central anode and electrons drifting inward">
-      <circle class="shell" cx="150" cy="150" r="128"/>
-      <g class="track">
-        <path d="M150 22 C152 60 148 100 150 128"/>
-        <path d="M240 60 C210 90 175 115 158 140"/>
-        <path d="M278 150 C240 152 200 148 172 150"/>
-        <path d="M240 240 C210 210 178 186 160 162"/>
-        <path d="M150 278 C148 240 152 200 150 172"/>
-        <path d="M60 240 C90 210 122 186 140 162"/>
-        <path d="M22 150 C60 148 100 152 128 150"/>
-        <path d="M60 60 C90 90 125 115 142 140"/>
-      </g>
-      <line x1="150" y1="150" x2="150" y2="292" stroke="var(--ink)" stroke-width="2"/>
-      <circle class="anode" cx="150" cy="150" r="14"/>
-      <text x="168" y="146">anode ball</text>
-      <text x="165" y="40">drift gas</text>
-      <text x="164" y="288">HV rod and readout</text>
+    <svg class="osc" viewBox="0 0 320 270" role="img" aria-label="Two-flavour neutrino oscillation: the muon-neutrino survival probability falls and the conversion probability rises with L over E, with the NOvA operating point marked near L/E of 430 kilometres per GeV">
+      <line x1="44" x2="306" y1="218.0" y2="218.0" class="gr"/><text x="38" y="222.0" text-anchor="end">0</text><line x1="44" x2="306" y1="117.0" y2="117.0" class="gr"/><text x="38" y="121.0" text-anchor="end">0.5</text><line x1="44" x2="306" y1="16.0" y2="16.0" class="gr"/><text x="38" y="20.0" text-anchor="end">1</text>
+      <line x1="44" y1="218" x2="306" y2="218" class="ax"/><line x1="44" y1="16" x2="44" y2="218" class="ax"/>
+      <line x1="44.0" x2="44.0" y1="218" y2="222" class="ax"/><text x="44.0" y="234" text-anchor="middle">0</text><line x1="131.3" x2="131.3" y1="218" y2="222" class="ax"/><text x="131.3" y="234" text-anchor="middle">400</text><line x1="218.7" x2="218.7" y1="218" y2="222" class="ax"/><text x="218.7" y="234" text-anchor="middle">800</text><line x1="306.0" x2="306.0" y1="218" y2="222" class="ax"/><text x="306.0" y="234" text-anchor="middle">1200</text>
+      <line x1="137.1" x2="137.1" y1="16" y2="218" class="nv"/>
+      <path d="M44.0 16.0 L46.2 16.2 L48.4 16.7 L50.5 17.6 L52.7 18.8 L54.9 20.4 L57.1 22.3 L59.3 24.6 L61.5 27.1 L63.6 30.0 L65.8 33.2 L68.0 36.7 L70.2 40.4 L72.4 44.5 L74.6 48.7 L76.8 53.2 L78.9 58.0 L81.1 62.9 L83.3 68.0 L85.5 73.2 L87.7 78.6 L89.8 84.2 L92.0 89.8 L94.2 95.5 L96.4 101.3 L98.6 107.1 L100.8 112.9 L103.0 118.8 L105.1 124.6 L107.3 130.3 L109.5 136.0 L111.7 141.6 L113.9 147.1 L116.0 152.5 L118.2 157.7 L120.4 162.7 L122.6 167.6 L124.8 172.2 L127.0 176.7 L129.2 180.8 L131.3 184.8 L133.5 188.4 L135.7 191.8 L137.9 194.9 L140.1 197.7 L142.2 200.1 L144.4 202.3 L146.6 204.1 L148.8 205.5 L151.0 206.6 L153.2 207.4 L155.3 207.8 L157.5 207.9 L159.7 207.6 L161.9 206.9 L164.1 205.9 L166.3 204.6 L168.4 202.9 L170.6 200.8 L172.8 198.5 L175.0 195.8 L177.2 192.8 L179.4 189.5 L181.6 186.0 L183.7 182.1 L185.9 178.0 L188.1 173.7 L190.3 169.1 L192.5 164.3 L194.7 159.3 L196.8 154.1 L199.0 148.8 L201.2 143.4 L203.4 137.8 L205.6 132.1 L207.8 126.4 L209.9 120.6 L212.1 114.8 L214.3 109.0 L216.5 103.1 L218.7 97.3 L220.8 91.6 L223.0 85.9 L225.2 80.4 L227.4 74.9 L229.6 69.6 L231.8 64.5 L233.9 59.5 L236.1 54.7 L238.3 50.1 L240.5 45.8 L242.7 41.7 L244.9 37.8 L247.1 34.3 L249.2 31.0 L251.4 28.0 L253.6 25.3 L255.8 23.0 L258.0 21.0 L260.1 19.3 L262.3 17.9 L264.5 16.9 L266.7 16.3 L268.9 16.0 L271.1 16.1 L273.2 16.5 L275.4 17.3 L277.6 18.4 L279.8 19.9 L282.0 21.7 L284.2 23.8 L286.4 26.3 L288.5 29.1 L290.7 32.2 L292.9 35.6 L295.1 39.2 L297.3 43.2 L299.4 47.4 L301.6 51.8 L303.8 56.4 L306.0 61.3" class="c1"/>
+      <path d="M44.0 218.0 L46.2 217.8 L48.4 217.3 L50.5 216.4 L52.7 215.2 L54.9 213.6 L57.1 211.7 L59.3 209.4 L61.5 206.9 L63.6 204.0 L65.8 200.8 L68.0 197.3 L70.2 193.6 L72.4 189.5 L74.6 185.3 L76.8 180.8 L78.9 176.0 L81.1 171.1 L83.3 166.0 L85.5 160.8 L87.7 155.4 L89.8 149.8 L92.0 144.2 L94.2 138.5 L96.4 132.7 L98.6 126.9 L100.8 121.1 L103.0 115.2 L105.1 109.4 L107.3 103.7 L109.5 98.0 L111.7 92.4 L113.9 86.9 L116.0 81.5 L118.2 76.3 L120.4 71.3 L122.6 66.4 L124.8 61.8 L127.0 57.3 L129.2 53.2 L131.3 49.2 L133.5 45.6 L135.7 42.2 L137.9 39.1 L140.1 36.3 L142.2 33.9 L144.4 31.7 L146.6 29.9 L148.8 28.5 L151.0 27.4 L153.2 26.6 L155.3 26.2 L157.5 26.1 L159.7 26.4 L161.9 27.1 L164.1 28.1 L166.3 29.4 L168.4 31.1 L170.6 33.2 L172.8 35.5 L175.0 38.2 L177.2 41.2 L179.4 44.5 L181.6 48.0 L183.7 51.9 L185.9 56.0 L188.1 60.3 L190.3 64.9 L192.5 69.7 L194.7 74.7 L196.8 79.9 L199.0 85.2 L201.2 90.6 L203.4 96.2 L205.6 101.9 L207.8 107.6 L209.9 113.4 L212.1 119.2 L214.3 125.0 L216.5 130.9 L218.7 136.7 L220.8 142.4 L223.0 148.1 L225.2 153.6 L227.4 159.1 L229.6 164.4 L231.8 169.5 L233.9 174.5 L236.1 179.3 L238.3 183.9 L240.5 188.2 L242.7 192.3 L244.9 196.2 L247.1 199.7 L249.2 203.0 L251.4 206.0 L253.6 208.7 L255.8 211.0 L258.0 213.0 L260.1 214.7 L262.3 216.1 L264.5 217.1 L266.7 217.7 L268.9 218.0 L271.1 217.9 L273.2 217.5 L275.4 216.7 L277.6 215.6 L279.8 214.1 L282.0 212.3 L284.2 210.2 L286.4 207.7 L288.5 204.9 L290.7 201.8 L292.9 198.4 L295.1 194.8 L297.3 190.8 L299.4 186.6 L301.6 182.2 L303.8 177.6 L306.0 172.7" class="c2"/>
+      <circle r="5" class="dot"><animateMotion dur="9s" repeatCount="indefinite" path="M44.0 16.0 L46.2 16.2 L48.4 16.7 L50.5 17.6 L52.7 18.8 L54.9 20.4 L57.1 22.3 L59.3 24.6 L61.5 27.1 L63.6 30.0 L65.8 33.2 L68.0 36.7 L70.2 40.4 L72.4 44.5 L74.6 48.7 L76.8 53.2 L78.9 58.0 L81.1 62.9 L83.3 68.0 L85.5 73.2 L87.7 78.6 L89.8 84.2 L92.0 89.8 L94.2 95.5 L96.4 101.3 L98.6 107.1 L100.8 112.9 L103.0 118.8 L105.1 124.6 L107.3 130.3 L109.5 136.0 L111.7 141.6 L113.9 147.1 L116.0 152.5 L118.2 157.7 L120.4 162.7 L122.6 167.6 L124.8 172.2 L127.0 176.7 L129.2 180.8 L131.3 184.8 L133.5 188.4 L135.7 191.8 L137.9 194.9 L140.1 197.7 L142.2 200.1 L144.4 202.3 L146.6 204.1 L148.8 205.5 L151.0 206.6 L153.2 207.4 L155.3 207.8 L157.5 207.9 L159.7 207.6 L161.9 206.9 L164.1 205.9 L166.3 204.6 L168.4 202.9 L170.6 200.8 L172.8 198.5 L175.0 195.8 L177.2 192.8 L179.4 189.5 L181.6 186.0 L183.7 182.1 L185.9 178.0 L188.1 173.7 L190.3 169.1 L192.5 164.3 L194.7 159.3 L196.8 154.1 L199.0 148.8 L201.2 143.4 L203.4 137.8 L205.6 132.1 L207.8 126.4 L209.9 120.6 L212.1 114.8 L214.3 109.0 L216.5 103.1 L218.7 97.3 L220.8 91.6 L223.0 85.9 L225.2 80.4 L227.4 74.9 L229.6 69.6 L231.8 64.5 L233.9 59.5 L236.1 54.7 L238.3 50.1 L240.5 45.8 L242.7 41.7 L244.9 37.8 L247.1 34.3 L249.2 31.0 L251.4 28.0 L253.6 25.3 L255.8 23.0 L258.0 21.0 L260.1 19.3 L262.3 17.9 L264.5 16.9 L266.7 16.3 L268.9 16.0 L271.1 16.1 L273.2 16.5 L275.4 17.3 L277.6 18.4 L279.8 19.9 L282.0 21.7 L284.2 23.8 L286.4 26.3 L288.5 29.1 L290.7 32.2 L292.9 35.6 L295.1 39.2 L297.3 43.2 L299.4 47.4 L301.6 51.8 L303.8 56.4 L306.0 61.3"/></circle>
+      <text x="142.1" y="26" class="lb">NOvA, 810 km at 1.9 GeV</text>
+      <text x="57.1" y="161.4" class="l1">νμ survival</text>
+      <text x="183.7" y="36.2" class="l2">νμ → ντ</text>
+      <text x="175.0" y="262" text-anchor="middle">L/E (km/GeV)</text>
+      <text transform="translate(11 117.0) rotate(-90)" text-anchor="middle">probability</text>
     </svg>
   </div>
 
@@ -151,6 +161,19 @@ nav a{border-left:0;border-bottom:2px solid transparent;padding:.2rem .3rem}
         <p>Detector R&amp;D for large experiments, combining detector development, electronics and data analysis. I also mentor master’s students in detector simulation and development.</p>
       </div>
     </div>
+    <figure class="card fig">
+      <svg class="bl" viewBox="0 0 660 190" role="img" aria-label="Neutrino beam travelling through the Earth from Fermilab to the NOvA far detector, 810 kilometres away, and to the DUNE far detector, about 1300 kilometres away">
+      <path d="M50.4 101.4 L59.7 96.7 L69.0 92.2 L78.3 87.8 L87.6 83.6 L96.9 79.6 L106.2 75.7 L115.5 72.0 L124.8 68.4 L134.1 65.0 L143.4 61.7 L152.8 58.6 L162.1 55.7 L171.4 52.9 L180.7 50.3 L190.0 47.9 L199.4 45.6 L208.7 43.4 L218.0 41.4 L227.3 39.6 L236.7 37.9 L246.0 36.4 L255.3 35.1 L264.7 33.9 L274.0 32.9 L283.3 32.0 L292.7 31.3 L302.0 30.7 L311.3 30.3 L320.7 30.1 L330.0 30.0 L339.3 30.1 L348.7 30.3 L358.0 30.7 L367.3 31.3 L376.7 32.0 L386.0 32.9 L395.3 33.9 L404.7 35.1 L414.0 36.4 L423.3 37.9 L432.7 39.6 L442.0 41.4 L451.3 43.4 L460.6 45.6 L470.0 47.9 L479.3 50.3 L488.6 52.9 L497.9 55.7 L507.2 58.6 L516.6 61.7 L525.9 65.0 L535.2 68.4 L544.5 72.0 L553.8 75.7 L563.1 79.6 L572.4 83.6 L581.7 87.8 L591.0 92.2 L600.3 96.7 L609.6 101.4 L609.6 185 L50.4 185 Z" class="rock"/>
+      <path d="M50.4 101.4 L59.7 96.7 L69.0 92.2 L78.3 87.8 L87.6 83.6 L96.9 79.6 L106.2 75.7 L115.5 72.0 L124.8 68.4 L134.1 65.0 L143.4 61.7 L152.8 58.6 L162.1 55.7 L171.4 52.9 L180.7 50.3 L190.0 47.9 L199.4 45.6 L208.7 43.4 L218.0 41.4 L227.3 39.6 L236.7 37.9 L246.0 36.4 L255.3 35.1 L264.7 33.9 L274.0 32.9 L283.3 32.0 L292.7 31.3 L302.0 30.7 L311.3 30.3 L320.7 30.1 L330.0 30.0 L339.3 30.1 L348.7 30.3 L358.0 30.7 L367.3 31.3 L376.7 32.0 L386.0 32.9 L395.3 33.9 L404.7 35.1 L414.0 36.4 L423.3 37.9 L432.7 39.6 L442.0 41.4 L451.3 43.4 L460.6 45.6 L470.0 47.9 L479.3 50.3 L488.6 52.9 L497.9 55.7 L507.2 58.6 L516.6 61.7 L525.9 65.0 L535.2 68.4 L544.5 72.0 L553.8 75.7 L563.1 79.6 L572.4 83.6 L581.7 87.8 L591.0 92.2 L600.3 96.7 L609.6 101.4" class="surf"/>
+      <line x1="50.4" y1="101.4" x2="398.9" y2="34.3" class="beam"/>
+      <line x1="50.4" y1="101.4" x2="609.6" y2="101.4" class="beam b2"/>
+      <circle cx="50.4" cy="101.4" r="5" class="pt"/><circle cx="398.9" cy="34.3" r="5" class="pt"/><circle cx="609.6" cy="101.4" r="5" class="pt"/>
+      <text x="50.4" y="123.4" text-anchor="start">Fermilab beam and near detector</text>
+      <text x="398.9" y="56.3" text-anchor="middle">NOvA far detector, 810 km</text>
+      <text x="609.6" y="123.4" text-anchor="end">DUNE far detector, about 1,300 km</text>
+    </svg>
+      <figcaption>The beam is made at Fermilab and crosses the Earth’s crust in a straight line, so no tunnel is needed. Depth is exaggerated about five times.</figcaption>
+    </figure>
     <div class="card eq" style="margin-top:1rem">
       <p>The two-flavour oscillation probability, the starting point for what long-baseline experiments like NOvA and DUNE measure:</p>
       $$P_{\alpha \to \beta} = \sin^2(2\theta)\,\sin^2\!\left(\frac{\Delta m^2 L}{4E}\right)$$
